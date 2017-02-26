@@ -2,12 +2,12 @@
 This reply template of PHD thesis is modified from:
 https://www.latextemplates.com/template/frequently-asked-questions
 ## Usage:
-```
+```latex
 \question{Question}{page number}{ans}
 ```
 which only consists of direct answer for the question or suggestion.
 
-```
+```latex
 \qwithr{Question}{page number}{ans}{Revised text}
 ```
 which includes not only the answer but also the revised text from the thesis.

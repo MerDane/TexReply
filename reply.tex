@@ -1,0 +1,86 @@
+
+\documentclass[11pt]{article}
+
+\usepackage{geometry} 
+\geometry{
+ a4paper,
+ total = {170mm, 257mm},
+ left = 30mm,
+ right = 10mm,
+ top = 20mm,
+ bottom = 15mm,
+}
+
+\usepackage{nth}
+\usepackage[dvipdfm, usenames]{color}
+\usepackage[linkcolor=blue]{hyperref}
+\hypersetup{pdfborder={0 0 0}, colorlinks=true, urlcolor=blue} 
+\usepackage{todonotes}
+\usepackage{tocloft} 
+\usepackage{microtype} 
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength\parindent{0pt}
+
+\definecolor{beaublue}{rgb}{0.74, 0.83, 0.9}
+
+\newcounter{questioncounter}
+%\newcommand{\countnumber}[1]{\stepcounter{questioncounter}}
+
+
+%#1 is question #2 page position #3 sentence of answer #4 sentence of revised
+\newcommand\todoin[2][]{\todo[inline, caption={ans},color=white!40, #1]{\begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+
+
+
+\newcommand{\question}[3] 
+{
+	\par\noindent 
+	\phantomsection
+	\stepcounter{questioncounter} 
+	\todo[inline,color=beaublue]{ \textbf{{\nth{\arabic{questioncounter}}} Question in page }{#2:}{ \textit{#1}}} 
+	\vspace{1mm}
+	\todoin{\textbf{Answer:} {#3}}
+	\vspace{4mm} 
+}
+
+
+\newcommand{\qwithr}[4] 
+{
+	\par\noindent 
+	\phantomsection
+	\stepcounter{questioncounter}  
+	\todo[inline, color=beaublue]{ \textbf{{\nth{\arabic{questioncounter}}} Question in page }{#2:}{ \textit{#1}}}
+	\vspace{1mm}
+	\todoin[inline,color=white!40] { \textbf{Answer:} {#3}}
+	\vspace{1mm}
+	\todoin{\textbf{Revised Text:} {\begin{quotation}#4\end{quotation}}}
+	\vspace{4mm} 
+}
+
+\input{frontmatter.tex}
+
+\begin{document}
+\thispagestyle{empty}
+\titleGM
+\clearpage
+\setcounter{page}{1}
+	
+%----------------------------------------------------------------------------------------
+%	QUESTIONS AND ANSWERS
+%----------------------------------------------------------------------------------------
+
+\question{Some equations}{page }{\\ An equation as:%
+\begin{equation}
+	g(x)=\frac { 1 }{ 1+{ e }^{ -kx } } 
+\end{equation}
+and equation 2.5 as:
+\begin{equation}
+	{ g' }(x)\quad =\quad g(x)[1-g(x)]\cdot{k}
+\end{equation}}%
+
+
+\end{document}

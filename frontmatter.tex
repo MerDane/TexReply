@@ -1,0 +1,21 @@
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\hbox{ % Horizontal box
+\hspace*{0.02\textwidth} % Whitespace to the left of the title page
+\rule{1pt}{\textheight} % Vertical line
+\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+\begin{center}
+\pagestyle{empty}
+{\noindent \Huge \bfseries Title}\\[2\baselineskip] % Title
+{\large \textit{Thesis title}}\\[4\baselineskip] % Tagline or further description
+{\Large \textsc{your name}} % Author name
+
+\end{center}
+
+
+
+\vspace{0.6\textheight} % Whitespace between the title block and the publisher
+{\noindent \large XXXX University}\\[\baselineskip] % Publisher and logo
+}}
+\endgroup}
